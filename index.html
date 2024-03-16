@@ -4,26 +4,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BF Suma Supplements</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2ecc71; /* Green background color */
+        }
+
+        header, footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #f0f0f0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to BF Suma Supplements</h1>
+        <h1>BF Suma Supplements</h1>
     </header>
     <nav>
-        <!-- Navigation links here -->
+        <!-- Navigation Links Here -->
     </nav>
     <main>
         <section>
-            <!-- Content and images here -->
+            <h2>Product Gallery</h2>
+            <div class="gallery">
+                <img src="suma.jpg" alt="BF Suma Supplement 1" onclick="openModal('suma.jpg', 'BF Suma Supplement 1')">
+                <img src="relief.jpg" alt="BF Suma Supplement 2" onclick="openModal('relief.jpg', 'BF Suma Supplement 2')">
+                <img src="omega.jpg" alt="BF Suma Supplement 3" onclick="openModal('omega.jpg', 'BF Suma Supplement 3')">
+                <img src="probio.jpg" alt="BF Suma Supplement 4" onclick="openModal('probio.jpg', 'BF Suma Supplement 4')">
+                <img src="c.jpg" alt="BF Suma Supplement 5" onclick="openModal('c.jpg', 'BF Suma Supplement 5')">
+            </div>
         </section>
-        <aside>
-            <!-- Sidebar or additional content here -->
-        </aside>
+        <section>
+            <h2>Supplement Information Table</h2>
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>BF Suma Immune Booster</td>
+                    <td>Helps support immune system health</td>
+                    <td>$20</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Pain Reliever</td>
+                    <td>Natural pain relief for joints and muscles</td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Omega-3</td>
+                    <td>Supports cardiovascular health</td>
+                    <td>$25</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Probiotics</td>
+                    <td>Enhances digestive and gut health</td>
+                    <td>$18</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Vitamin C</td>
+                    <td>Boosts immunity and skin health</td>
+                    <td>$12</td>
+                </tr>
+            </table>
+        </section>
     </main>
     <footer>
-        <p>© 2024 BF Suma Supplements</p>
+        <p>© 2024 BF Suma Supplements. All rights reserved.</p>
     </footer>
-    <script src="js/script.js"></script>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc, altText) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImage");
+
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            modalImg.alt = altText;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 </html>
