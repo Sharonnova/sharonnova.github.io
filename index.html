@@ -198,9 +198,82 @@
         <!-- Navigation Links Here -->
     </nav>
     <main>
-        <!-- Product Gallery and Supplement Information Table sections remain unchanged -->
-
-        <!-- New Contact Form Section -->
+        <section>
+            <h2>Product Gallery</h2>
+            <div class="gallery">
+                <img src="suma.jpg" alt="BF Suma Supplement 1" onclick="openModal('suma.jpg', 'BF Suma Supplement 1')">
+                <img src="relief.jpg" alt="BF Suma Supplement 2" onclick="openModal('relief.jpg', 'BF Suma Supplement 2')">
+                <img src="omega.jpg" alt="BF Suma Supplement 3" onclick="openModal('omega.jpg', 'BF Suma Supplement 3')">
+                <img src="probio.jpg" alt="BF Suma Supplement 4" onclick="openModal('probio.jpg', 'BF Suma Supplement 4')">
+                <img src="c.jpg" alt="BF Suma Supplement 5" onclick="openModal('c.jpg', 'BF Suma Supplement 5')">
+                <img src="ca.jpg" alt="BF Suma Calcium Supplement" onclick="openModal('ca.jpg', 'BF Suma Calcium Supplement')">
+                <img src="i.jpg" alt="BF Suma Iron Supplement" onclick="openModal('i.jpg', 'BF Suma Iron Supplement')">
+                <img src="m.jpg" alt="BF Suma Multivitamin" onclick="openModal('m.jpg', 'BF Suma Multivitamin')">
+                <img src="r.jpg" alt="BF Suma CoolRoll" onclick="openModal('r.jpg', 'BF Suma CoolRoll')">
+                <img src="z.jpg" alt="BF Suma Zinc Supplement" onclick="openModal('z.jpg', 'BF Suma Zinc Supplement')">
+            </div>
+        </section>
+        <section>
+            <h2>Supplement Information Table</h2>
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>BF Suma Immune Booster</td>
+                    <td>Helps support immune system health</td>
+                    <td>$20</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Pain Reliever</td>
+                    <td>Natural pain relief for joints and muscles</td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Omega-3</td>
+                    <td>Supports cardiovascular health</td>
+                    <td>$25</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Probiotics</td>
+                    <td>Enhances digestive and gut health</td>
+                    <td>$18</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Vitamin C</td>
+                    <td>Boosts immunity and skin health</td>
+                    <td>$12</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Calcium Supplement</td>
+                    <td>Strengthens bones and teeth</td>
+                    <td>$18</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Iron Supplement</td>
+                    <td>Helps prevent iron deficiency anemia</td>
+                    <td>$22</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Multivitamin</td>
+                    <td>Provides essential vitamins and minerals</td>
+                    <td>$30</td>
+                </tr>
+                <tr>
+                    <td>BF Suma CoolRoll</td>
+                    <td>Feel Relax</td>
+                    <td>$27</td>
+                </tr>
+                <tr>
+                    <td>BF Suma Zinc Supplement</td>
+                    <td>Supports immune function and wound healing</td>
+                    <td>$16</td>
+                </tr>
+            </table>
+        </section>
+        <!-- Contact Form Section -->
         <section class="contact-form">
             <h2>Contact Us</h2>
             <form>
@@ -220,12 +293,25 @@
 
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+        </div>
     </div>
 
     <script>
-        // Gallery script remains unchanged
+        function openModal(imageSrc, altText) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImage");
+
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            modalImg.alt = altText;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
     </script>
 </body>
 </html>
